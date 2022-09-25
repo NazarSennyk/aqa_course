@@ -20,14 +20,18 @@ user_input = input('Введіть свій вік:')
 
 if user_input.isdigit():
     age = int(user_input)
-    if age < 7:
-        print("Де твої батьки?")
+    if '7' in str(age):
+        print("Вам сьогодні пощастить")
+    elif age >= 190:
+        print('Ви ввели невірні дані')
+    elif age == 0:
+        print('Ви ввели невірні дані')
+    elif age < 7:
+        print("Де твої батьки&")
     elif age < 16:
         print("Це фільм для дорослих!")
-    elif age >= 65:
+    elif age > 65:
         print("Покажіть пенсійне посвідчення!")
-    elif '7' in str(age):
-        print("Вам сьогодні пощастить!")
     else:
         print("А білетів вже немає!")
 else:
