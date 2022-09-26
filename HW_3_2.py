@@ -10,6 +10,8 @@ print(f' "The {user_symbol} symbol in \'{user_word}\' is \'{resualt}\' "')
 
 #Написати цикл, який буде вимагати від користувача ввести слово, в якому є буква "о" (враховуються як великі так і маленькі).
 # Цикл не повинен завершитися, якщо користувач ввів слово без букви о.
+
+
 while True:
     user_input = input("Enter the word that contains 'o' upper case or lower cases:")
     if 'o' in user_input.lower() or 'o' in user_input.upper():
@@ -21,4 +23,3 @@ while True:
     if user_input is not str or int:
         print('You entered not valid data')
         continue
-
