@@ -1,4 +1,3 @@
-
 #1. вивести список всіх астронавтів, що перебувають в даний момент на орбіті (дані не фейкові, оновлюються в режимі реального часу)
 import requests
 from pprint import pprint
@@ -17,9 +16,7 @@ while True:
 
 
 #2.роздрукувати тепрературу та швидкість вітру. з вказівкою міста, яке було вибране
-import requests
-from pprint import pprint
-import time
+
 url = 'https://api.openweathermap.org/data/2.5/weather?q=lviv&appid=47503e85fabbabc93cff28c52398ae97&units=metric'
 response = requests.get(url)
 response_json = response.json()
