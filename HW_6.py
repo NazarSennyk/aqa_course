@@ -1,7 +1,4 @@
-import requests
-from pprint import pprint
-import time
-import time
+
 
 
 #1. вивести список всіх астронавтів, що перебувають в даний момент на орбіті (дані не фейкові, оновлюються в режимі реального часу)
