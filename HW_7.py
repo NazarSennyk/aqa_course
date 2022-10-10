@@ -28,10 +28,10 @@
 
 
 
-age1 = ['0' ,'1' ,'2' ,'3' ,'4' ,'5' ,'6' ,'7' ,'8' ,'9']
+
 result = []
 user_input = input('Введіть свій вік:')
-def age_check(age1):
+def age_check():
     age2 = user_input
     if user_input.endswith('0'):
          result.append('років')
@@ -72,4 +72,4 @@ def user_data():
     else:
         print('Ви ввели неправильні дані')
 
-age_check(age1) ,user_data()
+age_check() ,user_data()
