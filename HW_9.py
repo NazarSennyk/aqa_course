@@ -9,7 +9,7 @@ def decorator(arg):
             print(func)
             return result
         return wrapper
-    return decorator
+    return decor_print_result
 
 
 @decorator('Function that checks if given argument is even or not')
@@ -24,11 +24,11 @@ def odd_check(integer_float):
         return False
 
 
-assert odd_check(0)
-assert odd_check(1.54)
-assert odd_check(100)
-assert odd_check(-10)
-assert odd_check(0.213)
+assert odd_check(3) is False
+assert odd_check(1.54) is False
+assert odd_check(100) is True
+assert odd_check(-10) is True
+assert odd_check(0.213) is False
 
 
 @decorator('Function checks if given arg starts with capitalize letter')
@@ -44,8 +44,9 @@ def capitalize_check(arg):
         return False
 
 
-assert capitalize_check('dadas')
-assert capitalize_check('234')
-assert capitalize_check('  ')
-assert capitalize_check('Rd322ffA')
-assert capitalize_check('23.45')
+assert capitalize_check('dadas') is False
+assert capitalize_check('234') is True
+assert capitalize_check('  ') is True
+assert capitalize_check('Rd322ffA') is False
+assert capitalize_check('23.45') is True
+
