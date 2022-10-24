@@ -29,13 +29,20 @@ class BankAccount:
         self.money += summa
         BankAccount.deposit += summa
 
+    @classmethod
+    def refill_funds_cls(cls, summa):
+        BankAccount.deposit += summa
+
+    @classmethod
+    def withdrawal_funds_cls(cls, summa):
+        BankAccount.deposit -= summa
+
     def withdrawal_funds(self, summa):
         if self.money >= summa:
             self.money -= summa
             BankAccount.deposit -= summa
         else:
             self.money = 0
-            BankAccount.deposit = 0
 
     def __del__(self):
         print(f' {self.name}, your bank count was closed because of bank licvidation, refund amount is {self.money}')
@@ -64,7 +71,7 @@ class BankAccount:
 alex = BankAccount('Alex', 10, 55000)
 tom = BankAccount('Tom', 5, 100000)
 alex.percentage = 20
-tom.withdrawal_funds(45699)
+tom.withdrawal_funds(999999999999999999999999999999999)
 alex.refill_funds(10000)
 alex.money_transfer(tom, 5000)
 
