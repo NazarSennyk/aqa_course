@@ -1,110 +1,62 @@
 from abc import ABC, abstractmethod
-import random
+from random import randint, choice
+from typing import Union
+import faker
+from faker import Faker
+
+fake = Faker()
 
 
 class SchoolPersonal(ABC):
-    School_money = 0
+    def __init__(self, name: str, salary: Union[int, float]):
+        self.name = name
+        self.salary = salary
 
     @abstractmethod
     def __str__(self):
         pass
 
-    def __init__(self, name, surname, salary):
-        """
-        Init of a class
-        :param name:
-        :param surname:
-        :param salary:
-        """
-        self.name = name
-        self.surname = surname
-        self.salary = salary
-        SchoolPersonal.School_money += self.salary
-        if type(self) == Teacher:
-            Teacher.teacher_list.append(f'{self.name} {self.surname}')
-        elif type(self) == TechPersonal:
-            TechPersonal.list_person.append(f'{self.name} {self.surname}')
-
 
 class Teacher(SchoolPersonal):
-    teacher_list = []
-
     def __str__(self):
-        return f'{self.salary}'
+        return f' Hello my name is {self.name} with salary {self.salary} I\'m your new principal'
 
 
-class TechPersonal(SchoolPersonal):
-    list_person = []
-
+class TechnicalPersonal(SchoolPersonal):
     def __str__(self):
-        return f'{self.salary}'
-
-    def directors_assignment(self):
-        """
-        Assigmaent of new director of a school
-        :return: new director from teacher_list
-        """
-        director = self.director
-        self.director = random.choice(self.teachers_list)
-        self.teachers_list = self.teachers_list.remove(self.director)
-
-
-teacher1 = Teacher('Bob', 'Wolf', 2000)
-teacher2 = Teacher('Tom', 'Walles', 3000)
-teacher3 = Teacher('Alex', 'Good', 30300)
-teacher4 = Teacher('Goof', 'Ben', 30000)
-teacher5 = Teacher('Alek','Bold', 7000)
+        return f' Hello my name is {self.name} with salary {self.salary} I\'m your new technical staff'
 
 
 class School:
-
-    def __init__(self, name, director, teachers_list, tec_personal_list, month_salary):
-        """
-        Init for school class
-        :param name:
-        :param director:
-        :param teachers_list:
-        :param tec_personal_list:
-        :param month_salary:
-        """
+    def __init__(self, name: str, director: Teacher, teachers_list: int = 15, tech_personal_list: int = 8):
         self.name = name
         self.director = director
-        self.teachers_list = teachers_list
-        self.tec_personal_list = tec_personal_list
-        self.__month_salary = month_salary
+        self.teachers_list = [Teacher(fake.name(), randint(5000, 10000)) for position in range(teachers_list)]
+        self.tech_personal_list = [TechnicalPersonal(fake.name(), randint(3000, 7000)) for position in range(tech_personal_list)]
 
     @property
-    def get_list_people(self):
-        """
-        returns a list o all employee
-        :return: list
-        """
-        all_person = [self.director, self.teachers_list, self.tec_personal_list]
-        return all_person
+    def get_total_salary(self):
+        all_employee = []
+        all_employee.append(self.director)
+        all_employee += self.teachers_list
+        all_employee += self.tech_personal_list
+        total_money_employee = sum((obj.salary for obj in all_employee))
+        return total_money_employee
 
-    def directors_assignment(self):
-        """
-        Assings a new director
-        :return:
-        """
-        Teacher.teacher_list.append(self.director)
-        self.director = random.choice(self.teachers_list)
-        self.teachers_list = self.teachers_list.remove(self.director)
+    def director_assignment(self):
+        old_director = self.director
+        new_director = self.teachers_list.pop()
+        self.director = new_director
+        self.teachers_list.append(old_director)
 
     @staticmethod
-    def add_teacher(name, surname, salary):
-        Teacher(name, surname, salary)
+    def add_teacher(name: str, salary: Union[int, float]):
+        Teacher(name, salary)
 
 
-tec_person = TechPersonal('Alen', 'Wolks', 700)
-tec_person2 = TechPersonal('Vova', 'Loft', 800)
-tec_person3 = TechPersonal('Dima', 'Red', 900)
-
-
-new_school = School('Adam_West', random.choice(Teacher.teacher_list), Teacher.teacher_list, TechPersonal.list_person, 1000000)
-teacher_ls = Teacher.teacher_list
-salary_amount = SchoolPersonal.School_money
-new_teacher = School
-new_teacher.add_teacher('Taras', 'Petrov', 19000)
-
+school2 = School('Adam_west_school', Teacher('Ben Wilson', 8000))
+print(school2.teachers_list)
+print(school2.get_total_salary)
+school2.add_teacher('Will Smith', 4500)
+school2.director_assignment()
 
