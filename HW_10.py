@@ -12,7 +12,7 @@ class BankAccount:
         self.uuid = uuid.uuid4()
         self.date_account_creation = datetime.date.today()
         self.money = money
-        BankAccount.deposit += money
+        BankAccount.refill_funds_cls(self.money)
 
     @property
     def percentage(self):
@@ -27,7 +27,7 @@ class BankAccount:
 
     def refill_funds(self, summa):
         self.money += summa
-        BankAccount.deposit += summa
+        BankAccount.refill_funds_cls(summa)
 
     @classmethod
     def refill_funds_cls(cls, summa):
@@ -40,13 +40,15 @@ class BankAccount:
     def withdrawal_funds(self, summa):
         if self.money >= summa:
             self.money -= summa
-            BankAccount.deposit -= summa
+            BankAccount.withdrawal_funds_cls(summa)
+
         else:
+            BankAccount.withdrawal_funds_cls(self.money)
             self.money = 0
 
     def __del__(self):
         print(f' {self.name}, your bank count was closed because of bank licvidation, refund amount is {self.money}')
-        self.withdrawal_funds(self.deposit)
+        BankAccount.withdrawal_funds_cls(self.money)
 
     @property
     def get_todays_profit(self):
@@ -71,7 +73,7 @@ class BankAccount:
 alex = BankAccount('Alex', 10, 55000)
 tom = BankAccount('Tom', 5, 100000)
 alex.percentage = 20
-tom.withdrawal_funds(999999999999999999999999999999999)
+tom.withdrawal_funds(2000)
 alex.refill_funds(10000)
 alex.money_transfer(tom, 5000)
 

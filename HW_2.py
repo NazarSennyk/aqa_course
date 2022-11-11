@@ -27,7 +27,7 @@ if user_input.isdigit():
     elif age == 0:
         print('Ви ввели невірні дані')
     elif age < 7:
-        print("Де твої батьки&")
+        print("Де твої батьки?")
     elif age < 16:
         print("Це фільм для дорослих!")
     elif age > 65:
