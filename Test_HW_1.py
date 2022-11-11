@@ -79,16 +79,16 @@ def test_login_chrome():
     cell_numb_element = driver_chrome.find_element(By.XPATH, cell_numb_locator)
     cell_numb_element.clear()
     cell_numb_element.send_keys(login)
-    time.sleep(3)
+    time.sleep(2)
     password_locator = "//input[@class='custom-field-error input-field password']"
     password_element = driver_chrome.find_element(By.XPATH, password_locator)
     password_element.clear()
     password_element.send_keys(password)
-    time.sleep(3)
+    time.sleep(2)
     enter_button_locator = '//button[@name="signin-continue"]'
     enter_button_element = driver_chrome.find_element(By.XPATH, enter_button_locator)
     enter_button_element.click()
-    time.sleep(5)
+    time.sleep(4)
     logout_button_locator = "//a[text() = 'Вихід']"
     logout_button_element = driver_chrome.find_element(By.XPATH, logout_button_locator)
     verify_logout = logout_button_element.is_displayed()
