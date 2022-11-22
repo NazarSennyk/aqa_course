@@ -5,7 +5,7 @@ from qa_automation_hw.utilities.driver_factory import DriverFactory
 from qa_automation_hw.utilities.read_configs import Read_config
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture()
 def create_driver():
     driver_chrome = DriverFactory.create_driver(Read_config.get_browser_id())
     driver_chrome.maximize_window()
