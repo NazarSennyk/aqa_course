@@ -1,8 +1,3 @@
-import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from qa_automation_hw.page_objects.dashboardpage import DashBoardPage
-from qa_automation_hw.page_objects.login_page import LoginPage
 from qa_automation_hw.utilities.waits import wai_util
 
 

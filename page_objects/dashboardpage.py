@@ -29,7 +29,6 @@ class DashBoardPage(BasePage):
     __submenu_in_footer = (By.XPATH, '//div[@class="active-tab-content js-tab-content"]')
     __shopping_cart_button = (By.XPATH, '//i[@class="icon icon-goods_cart"]')
 
-
     def is_logout_visible(self):
         return self._is_visible(self.__logout_button)
 
