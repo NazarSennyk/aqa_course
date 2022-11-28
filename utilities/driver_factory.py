@@ -8,17 +8,17 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 
 class DriverFactory:
-    chrome = 1
-    firefox = 2
-    edge = 3
+    CHROME = 1
+    FIREFOX = 2
+    EDGE = 3
 
     @staticmethod
     def create_driver(driver_id):
-        if int(driver_id) == DriverFactory.chrome:
+        if int(driver_id) == DriverFactory.CHROME:
             driver = Chrome(service=ChromeService(ChromeDriverManager().install()))
-        elif int(driver_id) == DriverFactory.firefox:
+        elif int(driver_id) == DriverFactory.FIREFOX:
             driver = Firefox(service=FirefoxService(GeckoDriverManager().install()))
-        elif int(driver_id) == DriverFactory.edge:
+        elif int(driver_id) == DriverFactory.EDGE:
             driver = Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
         else:
             driver = Chrome(service=ChromeService(ChromeDriverManager().install()))

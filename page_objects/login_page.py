@@ -2,7 +2,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from qa_automation_hw.page_objects.dashboardpage import DashBoardPage
 from qa_automation_hw.utilities.web_ui.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class LoginPage(BasePage):
@@ -11,7 +10,6 @@ class LoginPage(BasePage):
         super().__init__(driver)
         self._wait = WebDriverWait(self.__driver, 10)
 
-    __login_button_locator = (By.XPATH, '//a[@href="#enter"]')
     __cell_numb_locator = (By.XPATH, "//input[@class='custom-field-error input-field phone-number']")
     __password_locator = (By.XPATH, "//input[@class='custom-field-error input-field password']")
     __enter_button_locator = (By.XPATH, '//button[@name="signin-continue"]')
@@ -37,22 +35,18 @@ class LoginPage(BasePage):
     __aid_button = (By.XPATH, '//a[@class="active-link"]')
     __tips_menu = (By.XPATH, '//*[contains(text(), "Як я можу побачити свій розмір знижки?")]')
 
-    def open_login_window(self):
-        login_button_element = self._wait.until(EC.element_to_be_clickable(self.__login_button_locator))
-        login_button_element.click()
-
-    def set_cell_number(self, cell_number):
+    def set_cell_number(self, cell_number: str):
         self._send_keys(self.__cell_numb_locator, cell_number)
         return self
 
-    def set_password(self, password):
+    def set_password(self, password: str):
         self._send_keys(self.__password_locator, password)
         return self
 
     def click_login(self):
         self._click(self.__enter_button_locator)
 
-    def login(self, cell_number, password):
+    def login(self, cell_number: str, password: str):
         self.set_cell_number(cell_number).set_password(password).click_login()
         return DashBoardPage(self.__driver)
 
