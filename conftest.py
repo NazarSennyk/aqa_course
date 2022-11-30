@@ -26,14 +26,14 @@ def log_in_user(open_login_page):
     return open_login_page.login('380507275915', 'Qwerty@qwerty')
 
 
-# @pytest.fixture(scope='session')
+@pytest.fixture(scope='session')
 def env():
-    with open('../configurations/configuration.json') as f:
+    with open('configurations/configuration.json') as f:
         data = f.read()
         json_to_dict = json.loads(data)
-
     config = Configuration(**json_to_dict)
     return config
 
-env()
+
+
 
