@@ -35,6 +35,12 @@ def env():
     return config
 
 
-@pytest.fixture(name="env")
-def full_env():
-    return env()
+@pytest.fixture(scope='session')
+def create_driver_js(env):
+    driver = DriverFactory.create_driver(driver_id=env.browser_id)
+    driver.maximize_window()
+    driver.get(env.base_url_api)
+    yield driver
+    driver.quit()
+
+
