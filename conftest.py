@@ -28,12 +28,13 @@ def log_in_user(open_login_page):
 
 @pytest.fixture(scope='session')
 def env():
-    with open('configurations/configuration.json') as f:
+    with open('../configuration/configuration.json') as f:
         data = f.read()
         json_to_dict = json.loads(data)
     config = Configuration(**json_to_dict)
     return config
 
 
-
-
+@pytest.fixture(name="env")
+def full_env():
+    return env()

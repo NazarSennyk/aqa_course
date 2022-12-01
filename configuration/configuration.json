@@ -1,5 +1,6 @@
 {
      "base_url": "https://www.flagman.kiev.ua/",
+     "base_url_api": "https://rickandmortyapi.com/api",
      "cell_phone": "380507275915",
      "password": "Qwerty@qwerty",
      "chrome" : "1"
