@@ -1,5 +1,6 @@
 import json
 import pytest
+from qa_automation_hw.data_classes.peson import Person
 from qa_automation_hw.page_objects.login_page import LoginPage
 from qa_automation_hw.utilities.configuration import Configuration
 from qa_automation_hw.utilities.driver_factory import DriverFactory
@@ -21,9 +22,9 @@ def open_login_page(create_driver):
 
 
 @pytest.fixture()
-def log_in_user(open_login_page):
+def log_in_user(open_login_page, env):
     open_login_page.open_login_window()
-    return open_login_page.login('380507275915', 'Qwerty@qwerty')
+    return open_login_page.login(env.cell_phone, env.password)
 
 
 @pytest.fixture(scope='session')
@@ -35,12 +36,11 @@ def env():
     return config
 
 
-@pytest.fixture(scope='session')
-def create_driver_js(env):
-    driver = DriverFactory.create_driver(driver_id=env.browser_id)
-    driver.maximize_window()
-    driver.get(env.base_url_api)
-    yield driver
-    driver.quit()
+@pytest.fixture()
+def crate_person():
+    return Person()
+
+
+
 
 
