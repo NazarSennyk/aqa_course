@@ -1,9 +1,9 @@
 {
      "base_url": "https://www.flagman.kiev.ua/",
-     "base_url_api": "https://rickandmortyapi.com/api",
+     "base_url_api": "https://rickandmortyapi.com/",
      "cell_phone": "380507275915",
      "password": "Qwerty@qwerty",
-     "chrome" : "1"
+     "browser_id" : "1"
    }
 
 

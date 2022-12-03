@@ -67,18 +67,6 @@ def test_remove_order(open_login_page, log_in_user):
 
 
 @pytest.mark.smoke
-def test_click_slide_menu(open_login_page, log_in_user):
-    dash_board_page = open_login_page
-    wai_util(lambda: log_in_user.next_button_is_visible() is True, 'No next button on screen')
-    dash_board_page.click_next_button()
-    dash_board_page.click_next_button()
-    dash_board_page.click_next_button()
-    dash_board_page.click_next_button()
-    dash_board_page.click_next_button()
-    assert log_in_user.home_page_is_visible() is False, 'You are not on home page'
-
-
-@pytest.mark.smoke
 def test_add_new_order(open_login_page, log_in_user):
     dash_board_page = open_login_page
     wai_util(lambda: log_in_user.empty_order_bucket_is_visible() is True, '123123213')
