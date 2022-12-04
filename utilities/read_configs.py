@@ -1,7 +1,7 @@
 import configparser
 
 
-abs_path = r'C:\Users\nazarii.sennyk\PycharmProjects\QA_automation_course\qa_automation_hw\configurations\configurations.ini'
+abs_path = r'C:\Users\Admin\PycharmProjects\pythonProject\qa_automation_hw\configuration\configurations.ini'
 config = configparser.RawConfigParser()
 config.read(abs_path)
 

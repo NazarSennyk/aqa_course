@@ -4,7 +4,7 @@ from http import HTTPStatus
 from qa_automation_hw.api_cpllections.episode_api import EpisodeAPI
 from qa_automation_hw.api_cpllections.locations_api import LocationAPI
 from qa_automation_hw.api_cpllections.people_api import PeopleApi
-from qa_automation_hw.data_classes.peson import Person
+from qa_automation_hw.data_classes.person import Person
 
 
 def test_get_character(env):
