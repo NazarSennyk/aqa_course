@@ -1,7 +1,10 @@
 import json
 import requests
+from qa_automation_hw.utilities.web_ui.decorator_mark_steps import auto_step
 
 
+
+@auto_step
 class BaseAPI:
     def __init__(self, env):
         self.__base_url = env.base_url_api

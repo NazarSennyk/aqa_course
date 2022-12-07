@@ -1,18 +1,32 @@
 import json
+from contextlib import suppress
 import pytest
-from qa_automation_hw.data_classes.peson import Person
+from qa_automation_hw.data_classes.person import Person
 from qa_automation_hw.page_objects.login_page import LoginPage
 from qa_automation_hw.utilities.configuration import Configuration
 from qa_automation_hw.utilities.driver_factory import DriverFactory
 from qa_automation_hw.utilities.read_configs import Read_config
+import allure
+
+
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, 'rep_' + rep.when, rep)
+    return rep
 
 
 @pytest.fixture()
-def create_driver():
-    driver_chrome = DriverFactory.create_driver(Read_config.get_browser_id())
+def create_driver(request):
+    driver_chrome = DriverFactory.create_driver(driver_id=Read_config.get_browser_id())
     driver_chrome.maximize_window()
     driver_chrome.get(Read_config.get_base_urt())
     yield driver_chrome
+    if request.node.rep_call.failed:
+        with suppress(Exception):
+            allure.attach(driver_chrome.get_screenshot_as_png(), name=request.function.__name__,
+                          attachment_type=allure.attachment_type.PNG)
     driver_chrome.quit()
 
 
@@ -29,7 +43,7 @@ def log_in_user(open_login_page, env):
 
 @pytest.fixture(scope='session')
 def env():
-    with open('../configuration/configuration.json') as f:
+    with open(r'C:\Users\Admin\PycharmProjects\pythonProject\qa_automation_hw\configuration\configuration.json') as f:
         data = f.read()
         json_to_dict = json.loads(data)
     config = Configuration(**json_to_dict)

@@ -1,7 +1,9 @@
 import pytest
 from qa_automation_hw.utilities.waits import wai_util
+import allure
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user_notvalid_cell_number(open_login_page):
     login_page = open_login_page
@@ -10,6 +12,7 @@ def test_login_user_notvalid_cell_number(open_login_page):
     assert dashboard_page.is_logout_visible() is False, 'You are logged in with not valid credentials'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user_notvalid_password(open_login_page):
 
@@ -19,6 +22,7 @@ def test_login_user_notvalid_password(open_login_page):
     assert dashboard_page.is_logout_visible() is False, 'You are logged in with not valid credentials'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user_with_empty_password_field(open_login_page):
     login_page = open_login_page
@@ -27,6 +31,7 @@ def test_login_user_with_empty_password_field(open_login_page):
     assert dashboard_page.is_logout_visible() is False, 'You are logged in with not valid credentials'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user_with_empty_cellphone_field(open_login_page):
     login_page = open_login_page
@@ -35,25 +40,31 @@ def test_login_user_with_empty_cellphone_field(open_login_page):
     assert dashboard_page.is_logout_visible() is False, 'You are logged in with not valid credentials'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user(log_in_user):
     dashboard = log_in_user
     assert dashboard.is_logout_visible() is True, 'User is not logt-in'
+    raise Exception
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_logout_user(open_login_page, log_in_user):
     dash_board_page = log_in_user
     open_login_page.logout()
     assert dash_board_page.registration_button_is_visible() is True, 'User is still logged in'
+    raise Exception
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_dashboard_submenu_is_visible(open_login_page, log_in_user):
     dash_board_page = log_in_user
     assert dash_board_page.dashboard_menu_item_is_visible() is True, 'No second menu item on Maine_Page'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_remove_order(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -66,6 +77,7 @@ def test_remove_order(open_login_page, log_in_user):
     assert log_in_user.empty_order_bucket_is_visible() is True, 'Your bucket is not empty'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_add_new_order(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -77,6 +89,7 @@ def test_add_new_order(open_login_page, log_in_user):
     assert log_in_user.not_empty_order_bucket() is True, 'Your order bucket is empty'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_sear_filters_equipment(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -85,6 +98,7 @@ def test_presence_sear_filters_equipment(open_login_page, log_in_user):
     assert log_in_user.search_filter_in_equipment_is_visible() is True, 'No search menu present'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_search_tent_in_input(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -93,6 +107,7 @@ def test_search_tent_in_input(open_login_page, log_in_user):
     assert log_in_user.tent_all_items_is_visible() is True, 'No search result'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_remove_order_from_bucket_through_input(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -105,6 +120,7 @@ def test_remove_order_from_bucket_through_input(open_login_page, log_in_user):
     assert log_in_user.empty_order_bucket_is_visible() is True, 'Your order bucket is not empty'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_add_new_order_through_input(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -115,42 +131,49 @@ def test_add_new_order_through_input(open_login_page, log_in_user):
     assert log_in_user.not_empty_order_bucket() is True, 'Your order bucket is empty'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_sing_in_news_input_visible(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.sing_up_news_is_visible() is True, 'No Sing-up input'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_social_network_icon_facebook(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.social_network_icon_is_visible() is True, 'facebook icon ist not presente in footer'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_social_network_icon_youtube(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.social_network_icon_is_visible_youtube() is True, 'youtube icon is not present in footer'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_social_network_icon_instagram(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.social_network_icon_is_visible_instagram() is True, 'instagram icon is not present in footer'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_social_network_icon_issu(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.social_network_icon_is_visible_issu() is True, 'issu icon is not present in footer'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_winter_submenu_is_present(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.winter_submenu_is_present() is True, 'The winter submenu is not present'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_baits_in_winter_submenu_present(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -159,6 +182,7 @@ def test_baits_in_winter_submenu_present(open_login_page, log_in_user):
     assert log_in_user.bait_in_baits_submenu_is_visible() is True, 'No items in baits submenu'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_brandes_is_visible(open_login_page, log_in_user):
     dash_board_page = open_login_page
@@ -166,18 +190,21 @@ def test_brandes_is_visible(open_login_page, log_in_user):
     assert log_in_user.cruchevichi_icon_is_visible() is True, 'No brand icon on brand dashboard'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_carp_submenu(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.carp_submenu_on_dashboard_is_visible() is True, 'Carp submenu ist not present on dashboard'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_presence_of_submenu_in_footer(open_login_page, log_in_user):
     dash_board_page = open_login_page
     assert log_in_user.submenu_in_footer_is_visible() is True, 'Submenu in footer is not present'
 
 
+@allure.feature('Nazar Sennyk')
 @pytest.mark.regression
 def test_shopping_cart_is_visible(open_login_page, log_in_user):
     dash_board_page = open_login_page

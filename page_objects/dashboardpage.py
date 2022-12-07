@@ -1,7 +1,9 @@
 from selenium.webdriver.common.by import By
 from qa_automation_hw.utilities.web_ui.base_page import BasePage
+from qa_automation_hw.utilities.web_ui.decorator_mark_steps import auto_step
 
 
+@auto_step
 class DashBoardPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)

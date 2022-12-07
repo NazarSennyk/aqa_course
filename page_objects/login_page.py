@@ -2,8 +2,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from qa_automation_hw.page_objects.dashboardpage import DashBoardPage
 from qa_automation_hw.utilities.web_ui.base_page import BasePage
 from selenium.webdriver.common.by import By
+from qa_automation_hw.utilities.web_ui.decorator_mark_steps import auto_step
 
 
+@auto_step
 class LoginPage(BasePage):
     def __init__(self, driver):
         self.__driver = driver
