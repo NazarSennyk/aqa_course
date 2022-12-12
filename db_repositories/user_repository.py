@@ -19,10 +19,10 @@ class UserRepository(BaseRepo):
         return self._cursor.fetchone()
 
     def insert_one(self):
-        self._cursor.execute(f"insert into {self.table_name} (id, name, price) values ('{id}', {name}, '{price}');")
+        self._cursor.execute(f"insert into {self.table_name} (id, name, price) values ({id}, '{name}', {price});")
 
     def insert_into_table(self, table_name):
-        self._cursor.execute(f"insert into {self.table_name} (id, product_id, quantity) values ('{id}', {product_id}, '{quantity}');")
+        self._cursor.execute(f"insert into {self.table_name} (id, product_id, quantity) values ({id}, {product_id}, {quantity});")
 
     def join_tables(self):
         self._cursor.execute(f"select products.name, products.price \n"
