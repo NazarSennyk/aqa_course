@@ -10,14 +10,6 @@ class UserRepository(BaseRepo):
         self._cursor.execute(f"select from {self.table_name} where {self.table_name}.id = {user_id};")
         return self._cursor.fetchone()
 
-    def crate_table_products(self):
-        self._cursor.execute(f"create table products (id int primary key, name varchar (25), price int);")
-        return self._cursor.fetchone()
-
-    def create_table_orders(self):
-        self._cursor.execute(f"create table orders ( id int primary key, product_id int, quantity int);")
-        return self._cursor.fetchone()
-
     def insert_one(self):
         self._cursor.execute(f"insert into {self.table_name} (id, name, price) values ({id}, '{name}', {price});")
 
