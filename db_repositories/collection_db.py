@@ -5,10 +5,12 @@ class Collection(BaseDb):
     def __init__(self):
         super().__init__()
 
-    def update_car_info(self, brand_name):
-        self.mydb.mycol.updateOne({ brand: 'Mercedes', { $set: { brand: f'{brand_name}' }})
+    def insert_one(self, brand: str, engine: float, year: int):
+        self.mycol.insert_one({'brand': f'{brand}', 'engine': f'{engine}', 'year': f'{year}'})
 
-
+    def insert_many(self, brand: str, engine: float, year: int):
+        self.mycol.insert_many([{'brand': f'{brand}', 'engine': f'{engine}', 'year': f'{year}'},
+                                {'brand': f'{brand}', 'engine': f'{engine}', 'year': f'{year}'}])
 
 
 
