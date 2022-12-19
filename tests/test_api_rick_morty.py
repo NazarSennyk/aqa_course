@@ -1,6 +1,5 @@
 import json
 from http import HTTPStatus
-
 import allure
 
 from qa_automation_hw.api_cpllections.episode_api import EpisodeAPI
