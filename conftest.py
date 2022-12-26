@@ -43,7 +43,7 @@ def log_in_user(open_login_page, env):
 
 @pytest.fixture(scope='session')
 def env():
-    with open(r'C:\Users\Admin\PycharmProjects\pythonProject\qa_automation_hw\configuration\configuration.json') as f:
+    with open(r'C:\Users\Admin\PycharmProjects\pythonProject\qa_automation_hw\qa_automation_hw\configuration\configuration.json') as f:
         data = f.read()
         json_to_dict = json.loads(data)
     config = Configuration(**json_to_dict)
