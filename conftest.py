@@ -1,11 +1,11 @@
 import json
 from contextlib import suppress
 import pytest
-from qa_automation_hw.data_classes.person import Person
-from qa_automation_hw.page_objects.login_page import LoginPage
-from qa_automation_hw.utilities.configuration import Configuration
-from qa_automation_hw.utilities.driver_factory import DriverFactory
-from qa_automation_hw.utilities.read_configs import Read_config
+from data_classes.person import Person
+from page_objects.login_page import LoginPage
+from utilities.configuration import Configuration
+from utilities.driver_factory import DriverFactory
+from utilities.read_configs import Read_config
 import allure
 
 
