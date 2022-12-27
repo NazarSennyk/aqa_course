@@ -1,6 +1,6 @@
 import random
-from qa_automation_hw.data_classes.person import Person
-from qa_automation_hw.utilities.api.BaseAPI import BaseAPI
+from data_classes.person import Person
+from utilities.api.BaseAPI import BaseAPI
 
 
 class PeopleApi(BaseAPI):
