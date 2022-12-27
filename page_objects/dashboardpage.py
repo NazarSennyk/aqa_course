@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from qa_automation_hw.utilities.web_ui.base_page import BasePage
-from qa_automation_hw.utilities.web_ui.decorator_mark_steps import auto_step
+from utilities.web_ui.base_page import BasePage
+from utilities.web_ui.decorator_mark_steps import auto_step
 
 
 @auto_step
