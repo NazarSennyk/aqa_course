@@ -3,6 +3,7 @@ from contextlib import suppress
 import pytest
 from data_classes.person import Person
 from page_objects.login_page import LoginPage
+from CONSTANTS import ROOT_DIR
 from utilities.configuration import Configuration
 from utilities.driver_factory import DriverFactory
 from utilities.read_configs import Read_config
