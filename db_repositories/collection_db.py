@@ -1,4 +1,4 @@
-from db_repositories.baseDB import BaseDb
+from baseDB import BaseDb
 
 
 class Collection(BaseDb):

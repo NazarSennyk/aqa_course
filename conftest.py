@@ -19,10 +19,9 @@ def pytest_runtest_makereport(item, call):
 
 
 @pytest.fixture()
-def create_driver(request):
-    driver_chrome = DriverFactory.create_driver(driver_id=Read_config.get_browser_id())
+def create_driver(env, request):
+    driver_chrome = DriverFactory.create_driver(driver_id=env.browser_id)
     driver_chrome.maximize_window()
-    driver_chrome.get(Read_config.get_base_urt())
     yield driver_chrome
     if request.node.rep_call.failed:
         with suppress(Exception):
@@ -32,7 +31,8 @@ def create_driver(request):
 
 
 @pytest.fixture()
-def open_login_page(create_driver):
+def open_login_page(create_driver, env):
+    create_driver.get(f'{env.base_url}')
     return LoginPage(create_driver)
 
 

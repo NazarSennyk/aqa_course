@@ -1,5 +1,5 @@
 import pytest
-from utilities.waits import wai_util
+from qa_automation_hw.utilities.waits import wai_util
 import allure
 
 
@@ -15,7 +15,6 @@ def test_login_user_notvalid_cell_number(open_login_page):
 @allure.feature('Nazar Sennyk')
 @pytest.mark.smoke
 def test_login_user_notvalid_password(open_login_page):
-
     login_page = open_login_page
     login_page.open_login_window()
     dashboard_page = login_page.login('380507275915', '12345678990')

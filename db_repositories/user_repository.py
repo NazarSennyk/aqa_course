@@ -1,4 +1,4 @@
-from db_repositories.base_repository import BaseRepo
+from base_repository import BaseRepo
 
 
 class UserRepository(BaseRepo):

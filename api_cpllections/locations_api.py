@@ -1,4 +1,4 @@
-from utilities.api.BaseAPI import BaseAPI
+from api.BaseAPI import BaseAPI
 
 
 class LocationAPI(BaseAPI):
