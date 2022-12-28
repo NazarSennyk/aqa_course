@@ -1,10 +1,10 @@
 import json
 from contextlib import suppress
 import pytest
-from page_objects.login_page import LoginPage
-from CONSTANTS import ROOT_DIR
-from utilities.configuration import Configuration
-from utilities.driver_factory import DriverFactory
+from qa_automation_course.page_objects.login_page import LoginPage
+from qa_automation_course.CONSTANTS import ROOT_DIR
+from qa_automation_course.utilities.configuration import Configuration
+from qa_automation_course.utilities.driver_factory import DriverFactory
 import allure
 
 
