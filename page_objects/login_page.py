@@ -1,8 +1,8 @@
 from selenium.webdriver.support.wait import WebDriverWait
-from qa_automation_course.page_objects.dashboardpage import DashBoardPage
-from qa_automation_course.utilities.web_ui.base_page import BasePage
+from page_objects.dashboardpage import DashBoardPage
+from utilities.web_ui.base_page import BasePage
 from selenium.webdriver.common.by import By
-from qa_automation_course.utilities.web_ui.decorator_mark_steps import auto_step
+from utilities.web_ui.decorator_mark_steps import auto_step
 
 
 @auto_step

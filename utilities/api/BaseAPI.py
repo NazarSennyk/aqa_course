@@ -1,6 +1,6 @@
 import json
 import requests
-from qa_automation_course.utilities.web_ui.decorator_mark_steps import auto_step
+from utilities.web_ui.decorator_mark_steps import auto_step
 
 
 @auto_step

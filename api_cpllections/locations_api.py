@@ -1,4 +1,4 @@
-from qa_automation_course.utilities.api import BaseAPI
+from utilities.api import BaseAPI
 
 
 class LocationAPI(BaseAPI):
