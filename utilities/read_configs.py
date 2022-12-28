@@ -1,6 +1,5 @@
 import configparser
-
-from qa_automation_hw.CONSTANTS import ROOT_DIR
+from qa_automation_course.CONSTANTS import ROOT_DIR
 
 abs_path = f'{ROOT_DIR}/configuration/configurations.ini'
 config = configparser.RawConfigParser()

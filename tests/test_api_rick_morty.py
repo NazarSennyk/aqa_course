@@ -1,10 +1,10 @@
 import json
 from http import HTTPStatus
 import allure
-from qa_automation_hw.api_cpllections.episode_api import EpisodeAPI
-from qa_automation_hw.api_cpllections.locations_api import LocationAPI
-from qa_automation_hw.api_cpllections.people_api import PeopleApi
-from qa_automation_hw.data_classes.person import Person
+from qa_automation_course.api_cpllections.episode_api import EpisodeAPI
+from qa_automation_course.api_cpllections.locations_api import LocationAPI
+from qa_automation_course.api_cpllections.people_api import PeopleApi
+from qa_automation_course.data_classes.person import Person
 
 
 @allure.feature('Nazar Sennyk')

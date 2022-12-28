@@ -1,4 +1,4 @@
-from base_repository import BaseRepo
+from qa_automation_course.db_repositories.base_repository import BaseRepo
 
 
 class UserRepository(BaseRepo):
