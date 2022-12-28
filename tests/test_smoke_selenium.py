@@ -1,5 +1,5 @@
-# import pytest
-# from utilities.waits import wai_util
+import pytest
+from utilities.waits import wai_util
 import allure
 
 
