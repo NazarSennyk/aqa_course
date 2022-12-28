@@ -1,4 +1,4 @@
-from qa_automation_hw.utilities.api import BaseAPI
+from qa_automation_course.utilities.api import BaseAPI
 
 
 class EpisodeAPI(BaseAPI):

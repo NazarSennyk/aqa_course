@@ -1,4 +1,4 @@
-from qa_automation_hw.db_repositories.baseDB import BaseDb
+from qa_automation_course.db_repositories.baseDB import BaseDb
 
 
 class Collection(BaseDb):
