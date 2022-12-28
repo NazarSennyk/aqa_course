@@ -1,4 +1,4 @@
-from qa_automation_hw.db_repositories.base_repository import BaseRepo
+from db_repositories.base_repository import BaseRepo
 
 
 class TableRepo(BaseRepo):
