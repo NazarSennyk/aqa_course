@@ -14,7 +14,8 @@ class UserRepository(BaseRepo):
         self._cursor.execute(f"insert into {self.table_name} (id, name, price) values ({id}, '{name}', {price});")
 
     def insert_into_table(self, table_name):
-        self._cursor.execute(f"insert into {self.table_name} (id, product_id, quantity) values ({id}, {product_id}, {quantity});")
+        self._cursor.execute(f"insert into {self.table_name} (id, product_id, quantity) values ({id}, {product_id},"
+                             f" {quantity});")
 
     def join_tables(self):
         self._cursor.execute(f"select products.name, products.price \n"

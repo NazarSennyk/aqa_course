@@ -1,11 +1,11 @@
 import json
 from contextlib import suppress
+import allure
 import pytest
-from page_objects.login_page import LoginPage
 from CONSTANTS import ROOT_DIR
+from page_objects.login_page import LoginPage
 from utilities.configuration import Configuration
 from utilities.driver_factory import DriverFactory
-import allure
 
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
