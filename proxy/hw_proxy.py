@@ -4,18 +4,14 @@ import os
 
 
 def my_print():
-    for item in os.scandir('.'):
-        temp_item: os.DirEntry = item
-        print(f'{temp_item.path}')
-        with open('text.txt') as file:
-            count = collections.Counter(file.read().lower())
-            value = pprint.pformat(count)
-            return print(value)
+    "Don't know how to do from received materials don't see the solutions"
 
 
-my_print()
-
-
+def letter_frequency():
+    with open('text.txt') as file:
+        count = collections.Counter(file.read().lower())
+        value = pprint.pformat(count)
+        return value
 
 
 

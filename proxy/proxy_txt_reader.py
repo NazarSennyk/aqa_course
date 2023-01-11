@@ -1,13 +1,14 @@
 from proxy.abstract_reader import Reader
 from proxy.txt_reader import TxtReader
+from proxy.txt_writer import TxtWriter
 
 
-class TxtProxyReader(Reader):
-    def __init__(self, txt_reader: TxtReader, file_path):
+class TxtProxyReaderWriter(Reader):
+    def __init__(self, txt_reader: TxtReader, txt_writer: TxtWriter):
         self.result = ''
         self.is_actual = False
         self.reader = txt_reader
-        self.file_path = file_path
+        self.writer = txt_writer
 
     def read_file(self):
         if self.is_actual:
@@ -17,14 +18,20 @@ class TxtProxyReader(Reader):
             self.is_actual = True
             return self.result
 
-    def write_file_change_actual(self, new_data):
-        if self.is_actual:
+    def write_file(self):
+        if self.is_actual is False:
             return self.is_actual
         else:
-            with open(self.file_path) as file:
-                text = file.write(new_data)
-                self.is_actual = False
-                return text
+            self.result = self.writer.write_file('some_file')
+            self.is_actual = False
+            return self.result
+
+
+
+
+
+
+
 
 
 
