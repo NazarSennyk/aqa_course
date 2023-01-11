@@ -1,4 +1,4 @@
-from utilities.api import BaseAPI
+from utilities.api.base_api import BaseAPI
 
 
 class EpisodeAPI(BaseAPI):
@@ -8,3 +8,5 @@ class EpisodeAPI(BaseAPI):
 
     def get_episode_id(self, episode_id: int):
         return self.get(f'{self.__url_episode}/{episode_id}')
+
+
