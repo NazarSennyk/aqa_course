@@ -4,7 +4,7 @@ import os
 
 
 def my_print():
-    "Don't know how to do from received materials don't see the solutions"
+    return os.system(f'echo {letter_frequency()}')
 
 
 def letter_frequency():
@@ -13,6 +13,7 @@ def letter_frequency():
         value = pprint.pformat(count)
         return value
 
+my_print()
 
 
 
