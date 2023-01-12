@@ -3,8 +3,8 @@ import pprint
 import os
 
 
-def my_print():
-    return os.system(f'echo {letter_frequency()}')
+def my_print(some_function):
+    return os.system(f'echo {some_function()}')
 
 
 def letter_frequency():
@@ -13,7 +13,7 @@ def letter_frequency():
         value = pprint.pformat(count)
         return value.split(',')
 
-my_print()
+my_print(some_function)
 
 
 
