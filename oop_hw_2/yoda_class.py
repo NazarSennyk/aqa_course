@@ -10,18 +10,18 @@ class Yoda(Jedi):
     def attack(self, other):
         if type(other) == Jedi:
             self.mana -= 15
-            other.health -= 20
+            other.__health -= 20
         else:
             self.mana -= 15
-            other.health = 0
+            other.__health = 0
 
     def health_mana_increase(self, other):
         if type(other) == Jedi:
             self.mana += 20
-            self.health += 20
+            self.__health += 20
         else:
             self.mana += 15
-            self.health += 10
+            self.__health += 10
 
     # polymorphism
     @staticmethod

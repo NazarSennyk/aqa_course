@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
 #abstraction
+# hiding
 class Jedi(ABC):
-    health = 100
-    available_skill_points = 0
+    __health = 100
+    __available_skill_points = 0
     # encapsulation
     # hiding
     def __init__(self, lightsaber: bool, special_power: str, mana: int):
@@ -19,4 +20,4 @@ class Jedi(ABC):
     # encapsulation
     @property
     def show_health(self):
-        return self.health
+        return self.__health

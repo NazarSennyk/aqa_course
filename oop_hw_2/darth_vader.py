@@ -11,18 +11,18 @@ class DarthVader(Jedi):
     def attack(self, other):
         if type(other) == Jedi:
             self.mana -= 20
-            other.health -= 25
+            other.__health -= 25
         else:
             self.mana -= 29
-            other.health = 0
+            other.__health = 0
 
     def ship_attack(self, other):
         if type(other) == Jedi:
             self.space_ship_attack = False
-            other.health -= 40
+            other.__health -= 40
         else:
             self.space_ship_attack = False
-            other.health = 0
+            other.__health = 0
 
     # polymorphism
     @staticmethod
