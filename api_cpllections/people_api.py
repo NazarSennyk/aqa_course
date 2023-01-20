@@ -1,9 +1,10 @@
-import random
 from data_classes.person import Person
-from utilities.api import BaseAPI
+from utilities.api.base_api import BaseAPI
+import random
 
 
 class PeopleApi(BaseAPI):
+
     def __init__(self, env):
         super().__init__(env)
         self.__url = 'api/character/'
