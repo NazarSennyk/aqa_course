@@ -8,11 +8,12 @@ fake = Faker()
 class Wagon:
 
     def __init__(self):
-        self.wagon_number = [Train().__getattribute__('list_of_wagons')]
+        self.wagon_number = [Train().__len__()]
         self.list_of_passengers = [fake.unique.first_name() for i in range(10)]
 
     def __str__(self):
-        return f' {self.__class__.__name__}: {{\n\twagon: {self.wagon_number}\n\t passengers:{self.list_of_passengers}' \
+        return f' {self.__class__.__name__}: {{\n\twagon: \'{self.wagon_number}\'\n\t passengers:\n' \
+               f'{self.list_of_passengers}' \
                f'\n\t}}'
 
     def add_passenger(self, passenger: str):
