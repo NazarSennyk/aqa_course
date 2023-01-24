@@ -20,11 +20,12 @@ class Wagon:
         return self.list_of_passengers.append(passenger)
 
     def __len__(self):
-        return self.list_of_passengers
+        print(self.list_of_passengers)
+        return 0
 
 
 c = Wagon()
 
 
-print(len(c.list_of_passengers))
+print(len(c))
 
