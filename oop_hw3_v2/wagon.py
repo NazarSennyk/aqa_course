@@ -8,7 +8,7 @@ fake = Faker()
 class Wagon:
 
     def __init__(self):
-        self.wagon_number = [Train().__len__()]
+        self.wagon_number = [Train().list_of_wagons]
         self.list_of_passengers = [fake.unique.first_name() for i in range(10)]
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Wagon:
 c = Wagon()
 
 
-print(len(c.wagon_number))
+
 
 print(c)
 
