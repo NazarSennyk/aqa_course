@@ -7,7 +7,7 @@ class Train:
         self.list_of_wagons = []
 
     def __len__(self):
-        return len(self.list_of_wagons)
+        return self.list_of_wagons
 
     def add_wagon(self, wagon):
         return self.list_of_wagons.append(wagon)
@@ -17,4 +17,4 @@ class Train:
 trn = Train()
 
 
-print(trn)
+print(len(trn.list_of_wagons))
