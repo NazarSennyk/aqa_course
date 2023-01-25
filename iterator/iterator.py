@@ -1,7 +1,7 @@
 class Iterator:
-    def __init__(self, sequence, end_index: int):
+    def __init__(self, sequence, start_index: int, end_index: int):
         self.sequence = sequence
-        self.start_index = 0
+        self.start_index = start_index
         self.end_index = end_index
 
     def __iter__(self):
@@ -12,7 +12,7 @@ class Iterator:
             item = self.sequence[self.start_index]
             self.start_index += 1
             return item
-        if self.end_index == 500 or self.end_index < 0:
+        if self.end_index < 0:
             raise StopIteration
 
 
