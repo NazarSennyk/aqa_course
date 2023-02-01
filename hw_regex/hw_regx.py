@@ -32,8 +32,8 @@ def regex_for_txt():
     with open('text.txt') as file:
         var_file = file.read()
         regex = re.compile("\W\s")
-        regex_result = regex.sub(' ', var_file, 0)
-        new_str = str(regex_result).replace('     ',' ')
+        regex_result = regex.sub(' ', var_file)
+        new_str = str(regex_result)
         return new_str
 
 pprint(regex_for_txt())
