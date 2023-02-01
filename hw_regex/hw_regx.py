@@ -26,14 +26,15 @@ def convert_name2(name: str):
 
 print(convert_name2(words))
 
-# Tesk_3
+Tesk_3
 
 def regex_for_txt():
     with open('text.txt') as file:
         var_file = file.read()
-        regex = re.compile('\.|\s|^....\s')
-        regex_result = regex.sub(' ', var_file, 1)
-        return regex_result
+        regex = re.compile("\,|\w|\d|\s|[']|[()]")
+        regex_result = regex.findall(var_file)
+        new_str = str(regex_result)
+        return new_str.replace(',','').replace("'",'')
 
 pprint(regex_for_txt())
 
